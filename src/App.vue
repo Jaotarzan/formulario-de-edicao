@@ -46,16 +46,16 @@ const linguagens = reactive([
 ])
 
 const pessoa = reactive({
-  Nome: '',
-  Idade: 18,
-  Email: '',
-  Senha: '',
-  Estado: '',
-  Cidade: '',
-  Endereco: '',
-  Hobbies: [],
-  Linguagens: [],
-  Biografia: ''
+  nome: '',
+  idade: 18,
+  email: '',
+  senha: '',
+  estado: '',
+  cidade: '',
+  endereco: '',
+  hobbies: [],
+  linguagens: [],
+  biografia: ''
 })
 
 const show = ref(false)
@@ -168,7 +168,7 @@ function EnviarDados() {
         <div class="opcao-checkbox" v-for="linguagem in linguagens" :key="linguagem.id">
           <input
             type="checkbox"
-            name="hobbies"
+            :name="linguagem.id"
             :value="linguagem.tipo"
             v-model="pessoa.linguagens"
           />
